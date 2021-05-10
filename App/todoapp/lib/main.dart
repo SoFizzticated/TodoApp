@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'models/global.dart';
+import 'package:todoapp/logging.dart';
+import 'package:todoapp/models/global.dart';
+import 'package:todoapp/reorderable_view_page.dart';
 
 void main() {
+  initRootLogger();
   runApp(MyApp());
 }
 
@@ -38,12 +41,14 @@ class _MyHomePageState extends State<MyHomePage> {
         child: DefaultTabController(
           length: 3,
           child: new Scaffold(
-            body: Stack(children: <Widget>[
+            body: Stack(children: [
               // Main swipeable screens
               TabBarView(
                 children: [
                   new Container(
                     color: Colors.grey,
+                    child: ReorderableViewPage(),
+                    // child: IntrayPage(),
                   ),
                   new Container(
                     color: Colors.orange,
@@ -53,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ],
               ),
-
+              /*
               // Intray holder
               Container(
                 padding: EdgeInsets.only(left: 50), // 50 left initial padding
@@ -71,11 +76,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Row(
                   // Maximize space between elements
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text(
-                      "Intray",
-                      style: intrayTitleStyle,
-                    ),
+                  children: [
+                    Text("Intray", style: intrayTitleStyle),
                     Container(),
                   ],
                 ),
@@ -87,7 +89,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 width: 80,
                 margin: EdgeInsets.only(
                   // Vertical offset, horizontal centered
-                  top: 130,
+                  top: 120,
                   left: (MediaQuery.of(context).size.width / 2) - 40,
                 ),
                 child: FloatingActionButton(
@@ -97,8 +99,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {},
                 ),
               )
+              */
             ]),
-
             // Navbar overlay
             appBar: AppBar(
               elevation: 0, // Remove shadows

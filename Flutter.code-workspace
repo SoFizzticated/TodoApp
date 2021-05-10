@@ -1,0 +1,10 @@
+{
+    "settings": {
+        "terminal.integrated.cwd": "D:\\FlutterProjects\\todoapp\\app\\todoapp"
+    },
+    "folders": [
+		{
+			"path": "."
+		}
+	]
+}
